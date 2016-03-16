@@ -1,6 +1,6 @@
-Fundamentals of Neo4j
+Fundamentals of Neo4j for Sqor
 ========================================================
-author: Nicole White
+author: Nicole White (adapted by Markus Feyh)
 date: 
 width: 1400
 height: 1000
@@ -9,39 +9,17 @@ height: 1000
 library(RNeo4j)
 file = 'import.txt'
 data = readChar(file, file.info(file)$size)
-graph = startGraph("http://localhost:7474/db/data/")
+graph = startGraph("http://tutorial.sb02.stations.graphenedb.com:24789/db/data/, username="tutorial", password="uMM9Rz5BWf3ULWeXNeNp")
 clear(graph, input = F)
 tx = newTransaction(graph)
 appendCypher(tx, data)
 commit(tx)
 ```
 
-Today's Data and Slides
+Today's Data
 ========================================================
 
 # `bit.ly/dfw-data`
-# `bit.ly/dfw-slides-short`
-
-Setup
-========================================================
-
-- Go to `neo4j.com`
-- Click on Download Neo4j
-- Download the Community Edition
-
-### Mac
-
-- Unzip the `.tar.gz` file (double-click it)
-- `cd` to the extracted directory in the Terminal
-- Execute `./bin/neo4j start`
-- Go to `localhost:7474` in your browser
-
-### Windows
-
-- Double-click the downloaded `.exe` file
-- Run Neo4j after installation finishes
-- Click Start
-- Go to `localhost:7474` in your browser
 
 Agenda
 ========================================================
@@ -49,7 +27,6 @@ Agenda
 - Cypher: Syntax Basics
 - Cypher: Match & Return
 - Cypher: Constraints & Indexes
-- Cypher: LOAD CSV
 
 Section Header
 ========================================================
